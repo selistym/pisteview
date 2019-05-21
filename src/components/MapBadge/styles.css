@@ -1,0 +1,26 @@
+.map__badge {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map__badge-marker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.map__badge-text {
+  margin-bottom: 5px;
+  color: white;
+  z-index: 100;
+}
+
+.map__badge-img {
+  z-index: 100;
+}

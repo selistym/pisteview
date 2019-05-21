@@ -1,0 +1,21 @@
+.popup-menu.social-share {
+  position: absolute;
+  bottom: 50px;
+  right: 12px;
+}
+.popup-menu.social-share.fade {
+  visibility: hidden;
+}
+
+.popup-menu__link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, .5)
+}
+
+.popup-menu__link:hover {
+  color: white;
+}
+
+.popup-menu__link i {
+  margin-right: 15px;
+}

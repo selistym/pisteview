@@ -1,0 +1,93 @@
+.player {
+  position: relative;
+}
+
+.react-player > div {
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+
+.react-player iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.player-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 42px;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 999991;
+  background: black;
+}
+.suggested-video-overlay {
+  display: flex;
+  align-items: center;
+  background-color: #3B3C41;
+  position: absolute;
+  bottom: 42px;
+  left: 0;
+  right: 0;
+  height: 175px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s cubic-bezier(0.0,0.0,0.2,1);
+  transition-delay: 0.1s;
+}
+
+.suggested-video-overlay > div:first-of-type {
+  margin-left: 70px;
+}
+.suggested-video-overlay > div:nth-of-type(2) {
+  margin-left: 20%;
+}
+.suggested-video-overlay a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.suggested-video-overlay a .link-text {
+  border-bottom: 1px solid white;
+}
+
+.suggested-video-overlay i {
+  font-size: 70px;
+  margin-right: 30px;
+}
+.suggested-video-overlay.visible{
+  z-index: 999991;
+  pointer-events: all;
+  opacity: 1;
+  transition-delay: 0s;
+}
+.player-placeholder {
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+.buttons-transparent-video-overlay {
+    z-index: 999991;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 250px;
+    height: 60px;
+}
+
+@media screen and (max-width: 540px) {
+  .suggested-video-overlay {
+    display: none;
+  }
+}

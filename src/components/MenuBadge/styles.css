@@ -1,0 +1,23 @@
+.menu__badge {
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #fff;
+  text-align: center;
+  transition: background-color .5s ease-in-out;
+  cursor: pointer;
+}
+
+.menu__badge-text {
+  line-height: 32px;
+  color: white;
+}
+
+.menu__badge-title {
+  padding-left: 15px;
+  color: white;
+  cursor: pointer;
+}
