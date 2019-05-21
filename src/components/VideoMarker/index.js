@@ -37,8 +37,8 @@ class VideoMarker extends PureComponent {
 		}
 		
 		const visibleCondition  = () => (
-			link.timeframe_link_entry_point <= (played * duration))
-			&& (link.timeframe_link_exit_point > (played * duration)
+			link.timeframe_link_entry_point <= (played * (duration - 1)))
+			&& (link.timeframe_link_exit_point > (played * (duration - 1))
 		);
 		
 		return (
@@ -51,7 +51,7 @@ class VideoMarker extends PureComponent {
 				onClick={() => switchToVideo(link.links_to_video)}
 				onMouseEnter={() => this.handleOnMouseEnter(link.video_info.video_type.icon_color)}
 				onMouseLeave={() => this.handleOnMouseLeave(link.video_info.video_type.icon_color)}
-			>
+			>{console.log(played * duration, 'visible condition')}
 				
 				<svg
 					width={link.icon_size === "near-field" ? "150" : "100"}

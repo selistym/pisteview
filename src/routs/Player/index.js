@@ -68,7 +68,7 @@ class Player extends Component {
 
   // panStarted = false;
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
     if (
       (prevProps.currentVideo.video_id !== this.props.currentVideo.video_id)
       || (prevProps.is360Active !== this.props.is360Active)
@@ -81,6 +81,7 @@ class Player extends Component {
         playedSeconds: this.props.startVideoEntryPoint,
       });
     }
+   
   }
 
   static getDerivedStateFromProps(props) {
@@ -109,8 +110,7 @@ class Player extends Component {
 
   componentDidMount() {
     console.log('player', this.player)
-  }
-
+  } 
   componentWillUnmount() {
     if (this.intervalHandler) {
       clearInterval(this.intervalHandler);
@@ -141,6 +141,7 @@ class Player extends Component {
   };
 
   calcTime = (time) => {
+    
     if (time > this.state.duration) {
       time = this.state.duration;
     }
@@ -168,16 +169,21 @@ class Player extends Component {
     this.setState({ seeking: false });
     this.player.seekTo(parseFloat(e.target.value));
   };
-  onProgress = state => {
+  onProgress = state => {    
+    
     state.played = state.played * (this.state.duration + stopBeforeEndDuration) / this.state.duration;
     this.setOnPause(state.playedSeconds);
+    console.log(state.played, 'played');
     // this.props.changeVideoEntryPoint(state.playedSeconds);
     // We only want to update time slider if we are not currently seeking
     if (!this.state.seeking) {
       this.setState(state);
     }
+    if(this.state.playedSeconds + 1 >= this.state.duration){
+      this.setState({ playing: false });
+    }
   };
-  onDuration = (duration) => {
+  onDuration = (duration) => {    
     this.setState({ duration: this._getNewDuration(duration) });
   };
   ref = player => {
@@ -291,7 +297,8 @@ class Player extends Component {
           !video_id && <div className="player-placeholder"/>
         }
         <div className={`buttons-transparent-video-overlay`}/>
-        {console.log(!isPlaying || !playing)}
+        
+        {console.log('onplaying?', this.state.playedSeconds, this.state.duration)}
         <div
           className={`suggested-video-overlay ${(!isPlaying || !playing) ? 'visible' : ''}`}
           style={{ background: this.props.brandColor }}

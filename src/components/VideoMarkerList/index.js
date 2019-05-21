@@ -10,10 +10,10 @@ const VideoMarkerList = ({links = [], played, duration, switchToVideo, dx, dy, c
           link={link}
           played={played}
           duration={duration}
-		  switchToVideo={switchToVideo}
-		  dx={dx}
-		  dy={dy}
-		  cameraAngle={cameraAngle}
+          switchToVideo={switchToVideo}
+          dx={dx}
+          dy={dy}
+          cameraAngle={cameraAngle}
         />
       )
     })
