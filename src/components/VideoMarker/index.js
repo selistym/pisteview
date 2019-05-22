@@ -37,8 +37,8 @@ class VideoMarker extends PureComponent {
 		}
 		
 		const visibleCondition  = () => (
-			link.timeframe_link_entry_point <= (played * (duration - 1)))
-			&& (link.timeframe_link_exit_point > (played * (duration - 1))
+			link.timeframe_link_entry_point <= (played * (duration - 1.2)))
+			&& (link.timeframe_link_exit_point > (played * (duration - 1.2))
 		);
 		
 		return (

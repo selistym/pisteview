@@ -129,62 +129,64 @@ class App extends Component {
 
     return (
       <div className="app">
-        <div className="app-content" style={{ background: this.state.brandColor }}>
-          <TopBar resortName={this.state.resortName}/>
-          {/*<Switch>*/}
-          <Route
-            path="/"
-            render={(props) => (
-              <Player
-                brandColor={this.state.brandColor}
-                language={this.state.language}
-                currentVideo={currentVideo}
-                switchToVideo={this.switchToVideo}
-                changeFilter={this.changeFilter}
-                startVideoEntryPoint={this.state.startVideoEntryPoint}
-                is360Active={this.state.is360Active}
-                is360Available={!!this._getCurrentVideo().video_id_vr && doesBrowserSupport360()}
-                currentFilter={this.state.currentFilter}
-                setLanguage={this.setLanguage}
-                {...props}
-              />
-            )}
-          />
-          <Route
-            exact
-            path='/map'
-            render={(props) => (
-              <CustomMap
-                locations={this.state.locations}
-                switchToVideo={this.switchToVideo}
-                history={props.history}
-                currentVideoId={currentVideo.id}
-                currentVideoLat={currentVideo.location_latitude}
-                currentVideoLng={currentVideo.location_longitude}
-              />
-            )}
-          />
-          <Route
-            exact
-            path='/menu'
-            render={(props) => (
-              <Menu
-                language={this.state.language}
-                locations={this.state.locations}
-                switchToVideo={this.switchToVideo}
-                history={props.history}
-                currentVideoId={currentVideo.id}
-              />
-            )}
-          />
-          {/*<Redirect to={{pathname: '/'}} />*/}
-          {/*</Switch>*/}
-        </div>
+        {this.state.brandColor && 
+          <div className="app-content" style={{ background: this.state.brandColor }}>
+            <TopBar resortName={this.state.resortName}/>
+            {/*<Switch>*/}
+            <Route
+              path="/"
+              render={(props) => (
+                <Player
+                  brandColor={this.state.brandColor}
+                  language={this.state.language}
+                  currentVideo={currentVideo}
+                  switchToVideo={this.switchToVideo}
+                  changeFilter={this.changeFilter}
+                  startVideoEntryPoint={this.state.startVideoEntryPoint}
+                  is360Active={this.state.is360Active}
+                  is360Available={!!this._getCurrentVideo().video_id_vr && doesBrowserSupport360()}
+                  currentFilter={this.state.currentFilter}
+                  setLanguage={this.setLanguage}
+                  {...props}
+                />
+              )}
+            />
+            <Route
+              exact
+              path='/map'
+              render={(props) => (
+                <CustomMap
+                  locations={this.state.locations}
+                  switchToVideo={this.switchToVideo}
+                  history={props.history}
+                  currentVideoId={currentVideo.id}
+                  currentVideoLat={currentVideo.location_latitude}
+                  currentVideoLng={currentVideo.location_longitude}
+                />
+              )}
+            />
+            <Route
+              exact
+              path='/menu'
+              render={(props) => (
+                <Menu
+                  language={this.state.language}
+                  locations={this.state.locations}
+                  switchToVideo={this.switchToVideo}
+                  history={props.history}
+                  currentVideoId={currentVideo.id}
+                />
+              )}
+            />
+            {/*<Redirect to={{pathname: '/'}} />*/}
+            {/*</Switch>*/}
+          </div>
+        }
         <p className="footer">
           <a href="http://www.pisteview.com/terms" target="_blank" rel="noopener noreferrer">
             Privacy &amp; Terms
           </a>
-        </p>
+        </p>        
       </div>
     );
   }

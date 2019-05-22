@@ -172,14 +172,13 @@ class Player extends Component {
   onProgress = state => {    
     
     state.played = state.played * (this.state.duration + stopBeforeEndDuration) / this.state.duration;
-    this.setOnPause(state.playedSeconds);
-    console.log(state.played, 'played');
+    this.setOnPause(state.playedSeconds);    
     // this.props.changeVideoEntryPoint(state.playedSeconds);
     // We only want to update time slider if we are not currently seeking
     if (!this.state.seeking) {
       this.setState(state);
     }
-    if(this.state.playedSeconds + 1 >= this.state.duration){
+    if(this.state.playedSeconds + stopBeforeEndDuration >= this.state.duration){
       this.setState({ playing: false });
     }
   };
@@ -258,6 +257,7 @@ class Player extends Component {
     } = this.state;
     const url = `https://www.youtube.com/watch?v=${this._getCurrentVideoId()}`;
     const isPlaying = !hidden && playing;
+    console.log(this.props.currentVideo.links, 'links')
     return (
       <div className="player">
         <PlayerInfoBar

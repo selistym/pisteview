@@ -2,9 +2,11 @@ import React from 'react'
 import VideoMarker from '../../components/VideoMarker'
 
 const VideoMarkerList = ({links = [], played, duration, switchToVideo, dx, dy, cameraAngle}) => {
+  
   return (
     links.map((link) => {
       return (
+        <>{console.log('marker')}
         <VideoMarker
           key={link.id}
           link={link}
@@ -14,7 +16,7 @@ const VideoMarkerList = ({links = [], played, duration, switchToVideo, dx, dy, c
           dx={dx}
           dy={dy}
           cameraAngle={cameraAngle}
-        />
+        /></>
       )
     })
   )
