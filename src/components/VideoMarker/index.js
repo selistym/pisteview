@@ -22,6 +22,7 @@ class VideoMarker extends PureComponent {
 	
 	render() {
 		const {link, played, duration, switchToVideo, dx, dy, cameraAngle} = this.props;
+		console.log(link, ' link data')
 		const {bgColor} = this.state;
 		
 		const _left = getRotatedMarkerCoordinate(cameraAngle*Math.PI/360, link.x_position_on_video_v5, dx*Math.PI/360);

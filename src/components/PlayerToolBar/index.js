@@ -95,7 +95,7 @@ const PlayerToolBar = (props) => {
 					is360Available
 					&&
 					<li className="rowLi">
-						<div className="switch_label">1080</div>
+						<div className="switch_label" onClick={on360Switch}>1080</div>
 						<Switch
 							onChange={on360Switch} // with binded playedSeconds
 							checked={is360Active}
@@ -111,7 +111,7 @@ const PlayerToolBar = (props) => {
 							className="react-switch"
 							id="material-switch"
 						/>
-						<div className="switch_label">360&#176;</div>
+						<div className="switch_label" onClick={on360Switch}>360&#176;</div>
 					</li>
 				}
 				{

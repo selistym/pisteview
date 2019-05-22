@@ -9,6 +9,41 @@ import VideoMarkerList from '../../components/VideoMarkerList';
 import {Link} from 'react-router-dom';
 import './styles.css';
 
+const tempLink = [{
+  belongs_to_video: 202,
+  icon_size: "near-field",
+  id: 541,
+  label: "36",
+  links_to_video: 122,
+  locked: false,
+  short_label: "36",
+  show: false,
+  svg_image_x: 32,
+  svg_image_y: 45,
+  svg_text_x: 63,
+  svg_text_y: 96,
+  svg_transformation: "rotate(135 67.66111755371095,76.1715087890625)",
+  timeframe_link_entry_point: 13,
+  timeframe_link_exit_point: 121,
+  timeframe_video_entry_point: 0,
+  video_info:{
+    id: 122,
+    internal_name: "Red 36",
+    video_type: {
+      category: {
+        id: 3,
+        name: "Pistes"
+      },
+      color_class: "icon-piste-9",
+      icon: "piste",
+      icon_color: "#e42222",
+      id: 9,
+      image_icon: false
+    },
+  },  
+  x_position_on_video_v5: 32,
+  y_position_on_video_v5: 45
+}];
 const initialState = {
   playing: true,
   volume: 1,
@@ -351,7 +386,7 @@ class Player extends Component {
         </PlayerToolBar>
 
         <VideoMarkerList
-          links={this.props.currentVideo.links}
+          links={tempLink}
           played={played}
           duration={duration}
           switchToVideo={this.props.switchToVideo}

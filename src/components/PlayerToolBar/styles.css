@@ -101,6 +101,7 @@
     color: #fff;
     display: flex;
     margin-top: 4px;
+    cursor: pointer;
 }
 
 .rowLi {
