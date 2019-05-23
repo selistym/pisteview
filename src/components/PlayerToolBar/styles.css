@@ -74,11 +74,13 @@
 .player__subscribe {
   margin-bottom: -3px;
 }
-
+.player-tool-bar{
+  z-index: 9999999;
+}
 @media screen and (max-width: 540px) {
   .player-tool-bar .player__progress-wrapper,
   .player-tool-bar .player__social {
-    display: none;
+    display: none;    
   }
 }
 

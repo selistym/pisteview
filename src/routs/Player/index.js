@@ -385,7 +385,7 @@ class Player extends Component {
           />
         </PlayerToolBar>
 
-        <AdsBadge bannersInfo={banners} bannerLabel={bannerLabel}/>
+        {banners && <AdsBadge bannersInfo={banners[0]} bannerLabel={bannerLabel}/>}
         
         <VideoMarkerList
           links={tempLink}

@@ -104,7 +104,7 @@ const App = props => {
 
     // if we use 360 video, need also change playing video object
     if (type && +type === 5 && !state.is360Active || state.is360Active) {
-      dispatch({type: 'change_videoentrypoint', value: time});      
+      changeVideoEntryPoint(time);      
     } else {
       let new_currentlocation = state.currentLocation;
       new_currentlocation.video_id = link;
