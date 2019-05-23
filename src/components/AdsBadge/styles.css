@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: center;  
+  align-items: flex-end; 
   padding: 6px 15px;
 }
 .banner-label {
@@ -10,5 +10,5 @@
   font-size: 19px;
   font-weight: normal;
   color: white;
-  
+  padding: 6px;
 }
