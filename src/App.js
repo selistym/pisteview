@@ -113,8 +113,7 @@ const App = props => {
     <div className="app">
       {state.brandColor && 
         <div className="app-content" style={{ background: state.brandColor }}>
-          <TopBar resortName={state.resortName}/>
-          {/*<Switch>*/}
+          <TopBar resortName={state.resortName}/>          
           <Route
             path="/"
             render={(props) => (
@@ -159,9 +158,7 @@ const App = props => {
                 currentVideoId={currentVideo.id}
               />
             )}
-          />
-          {/*<Redirect to={{pathname: '/'}} />*/}
-          {/*</Switch>*/}
+          />    
         </div>
       }
       <p className="footer">
