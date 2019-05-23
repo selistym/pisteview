@@ -8,6 +8,7 @@ import SocialShare from '../../components/SocialShare';
 import VideoMarkerList from '../../components/VideoMarkerList';
 import {Link} from 'react-router-dom';
 import './styles.css';
+import AdsBadge from '../../components/AdsBadge';
 
 const tempLink = [{
   belongs_to_video: 202,
@@ -332,8 +333,6 @@ class Player extends Component {
           !video_id && <div className="player-placeholder"/>
         }
         <div className={`buttons-transparent-video-overlay`}/>
-        
-        {console.log('onplaying?', this.state.playedSeconds, this.state.duration)}
         <div
           className={`suggested-video-overlay ${(!isPlaying || !playing) ? 'visible' : ''}`}
           style={{ background: this.props.brandColor }}
@@ -385,6 +384,8 @@ class Player extends Component {
           />
         </PlayerToolBar>
 
+        <AdsBadge />
+        
         <VideoMarkerList
           links={tempLink}
           played={played}

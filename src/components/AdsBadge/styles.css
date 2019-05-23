@@ -1,0 +1,7 @@
+.ads-badge-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+  padding: 6px 15px;
+}

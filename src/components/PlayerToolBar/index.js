@@ -26,8 +26,7 @@ const PlayerToolBar = (props) => {
 		onFadeSocialShare,
 		on360Switch,
 		onResetDirectionPress,
-    onLanguageChange,
-
+    	onLanguageChange,
 		hasSettings,
 		videoId,
 		filtervideos,
