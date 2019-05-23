@@ -17,6 +17,7 @@ const App = props => {
     language: 'en',
     locations: [],
     resortName: '',
+    bannerLabel: '',
     banners: [],
     currentLocation: {},
     is360Active: false,
@@ -26,11 +27,12 @@ const App = props => {
   }
 
   const reducer = (state, action) => {
-    switch (action.type) {
+    switch (action.type) {      
       case 'change_brandcolor': return {...state, brandColor: action.value};
       case 'change_language': return {...state, language: action.value};
       case 'change_locations': return {...state, locations: action.value};
       case 'change_resortname':  return {...state, resortName: action.value};
+      case 'change_bannerlabel': return {...state, bannerLabel: action.value};
       case 'change_banners':  return {...state, banners: action.value};
       case 'change_currentlocation': return {...state, currentLocation: action.value};
       case 'change_is360active': return {...state, is360Active: action.value};
@@ -64,6 +66,8 @@ const App = props => {
           });
         
         // set initial values to state
+        dispatch({type: 'change_bannerlabel', value: response.data.banner_label});
+        dispatch({type: 'change_banners', value: response.data.banners});
         dispatch({type: 'change_brandcolor', value: response.data.brand_color || '#3B3C41'});
         dispatch({type: 'change_resortname', value: response.data.resort.name});
         dispatch({type: 'change_locations', value: locations});
@@ -120,6 +124,8 @@ const App = props => {
               <Player
                 brandColor={state.brandColor}
                 language={state.language}
+                bannerLabel={state.bannerLabel}
+                banners={state.banners}
                 currentVideo={currentVideo}
                 switchToVideo={switchToVideo}
                 changeFilter={changeFilter}

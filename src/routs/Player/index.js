@@ -145,7 +145,7 @@ class Player extends Component {
   }
 
   componentDidMount() {
-    console.log('player', this.player)
+    // console.log('player', this.player)
   } 
   componentWillUnmount() {
     if (this.intervalHandler) {
@@ -267,6 +267,7 @@ class Player extends Component {
   };
 
   render() {
+    const {banners, bannerLabel} = this.props;
     const {
       video_id,
       info_bottom_height,
@@ -293,7 +294,7 @@ class Player extends Component {
     } = this.state;
     const url = `https://www.youtube.com/watch?v=${this._getCurrentVideoId()}`;
     const isPlaying = !hidden && playing;
-    console.log(this.props.currentVideo.links, 'links')
+    // console.log(this.props.currentVideo.links, 'links')
     return (
       <div className="player">
         <PlayerInfoBar
@@ -384,7 +385,7 @@ class Player extends Component {
           />
         </PlayerToolBar>
 
-        <AdsBadge />
+        <AdsBadge bannersInfo={banners} bannerLabel={bannerLabel}/>
         
         <VideoMarkerList
           links={tempLink}

@@ -5,3 +5,10 @@
   align-items: center;  
   padding: 6px 15px;
 }
+.banner-label {
+  margin: 0;
+  font-size: 19px;
+  font-weight: normal;
+  color: white;
+  
+}

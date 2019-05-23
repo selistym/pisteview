@@ -21,8 +21,7 @@ class VideoMarker extends PureComponent {
 	handleOnMouseLeave = (hex) => this.changeOpacity(hex, .5);
 	
 	render() {
-		const {link, played, duration, switchToVideo, dx, dy, cameraAngle} = this.props;
-		console.log(link, ' link data')
+		const {link, played, duration, switchToVideo, dx, dy, cameraAngle} = this.props;		
 		const {bgColor} = this.state;
 		
 		const _left = getRotatedMarkerCoordinate(cameraAngle*Math.PI/360, link.x_position_on_video_v5, dx*Math.PI/360);
@@ -52,8 +51,7 @@ class VideoMarker extends PureComponent {
 				onClick={() => switchToVideo(link.links_to_video)}
 				onMouseEnter={() => this.handleOnMouseEnter(link.video_info.video_type.icon_color)}
 				onMouseLeave={() => this.handleOnMouseLeave(link.video_info.video_type.icon_color)}
-			>{console.log(played * duration, 'visible condition')}
-				
+			>				
 				<svg
 					width={link.icon_size === "near-field" ? "150" : "100"}
 					height={link.icon_size === "near-field" ? "150" : "100"}

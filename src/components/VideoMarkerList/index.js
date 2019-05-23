@@ -5,8 +5,7 @@ const VideoMarkerList = ({links = [], played, duration, switchToVideo, dx, dy, c
   
   return (
     links.map((link) => {
-      return (
-        <>{console.log('marker')}
+      return (        
         <VideoMarker
           key={link.id}
           link={link}
@@ -16,7 +15,7 @@ const VideoMarkerList = ({links = [], played, duration, switchToVideo, dx, dy, c
           dx={dx}
           dy={dy}
           cameraAngle={cameraAngle}
-        /></>
+        />
       )
     })
   )
