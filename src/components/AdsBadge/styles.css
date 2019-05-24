@@ -1,9 +1,8 @@
-.ads-badge-container {
-  position: relative;
+.ads-badge-container {  
   display: flex;
   justify-content: space-around;
   align-items: flex-end; 
-  padding: 6px 6px;
+  padding: 6px 6px;  
   z-index: 9999999;
 }
 .banner-label {

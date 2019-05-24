@@ -13,8 +13,7 @@ class VideoMarker extends PureComponent {
 	}
 	
 	changeOpacity = (hex, opacity) => {
-		this.setState({bgColor: convertColor(hex, opacity)})
-		
+		this.setState({bgColor: convertColor(hex, opacity)})		
 	};
 	
 	handleOnMouseEnter = (hex) => this.changeOpacity(hex, 1);

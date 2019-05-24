@@ -1,5 +1,5 @@
 .player {
-  position: relative;
+  position: relative;  
 }
 
 .react-player > div {
@@ -23,7 +23,7 @@
   right: 0;
   left: 0;
   overflow: hidden;
-  z-index: 999991;
+  z-index: 999;
   background: black;
 }
 .suggested-video-overlay {
@@ -31,7 +31,7 @@
   align-items: center;
   background-color: #3B3C41;
   position: absolute;
-  bottom: 147px;
+  bottom: 144px;
   left: 0;
   right: 0;
   height: 175px;
@@ -63,7 +63,7 @@
   margin-right: 30px;
 }
 .suggested-video-overlay.visible{
-  z-index: 999991;
+  z-index: 999;
   pointer-events: all;
   opacity: 1;
   transition-delay: 0s;
@@ -77,7 +77,7 @@
   background: black;
 }
 .buttons-transparent-video-overlay {
-    z-index: 999991;
+    z-index: 999;
     opacity: 0;
     position: absolute;
     right: 0;

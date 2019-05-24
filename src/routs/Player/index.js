@@ -325,11 +325,11 @@ class Player extends Component {
           onPlay={this.onPlay}
           onPause={this.onPause}
         />
-        {
+        {/* {
           playedSeconds >= duration
           &&
           <div className="player-overlay"/>
-        }
+        } */}
         {
           !video_id && <div className="player-placeholder"/>
         }
@@ -384,8 +384,6 @@ class Player extends Component {
             onFadeSocialShare={this.onFadeSocialShare}
           />
         </PlayerToolBar>
-
-        {banners && <AdsBadge bannersInfo={banners[0]} bannerLabel={bannerLabel}/>}
         
         <VideoMarkerList
           links={tempLink}
@@ -396,6 +394,7 @@ class Player extends Component {
           dy={directionObj.pitch}
           cameraAngle={directionObj.fov}
         />
+        {banners && <AdsBadge bannersInfo={banners[0]} bannerLabel={bannerLabel}/>}
       </div>
     );
   }
