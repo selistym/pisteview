@@ -4,12 +4,12 @@ import './styles.css';
 
 const AdsBadge = ({bannersInfo, bannerLabel}) => (
 	<div className="ads-badge-container">
-		<div style={{width:'17%'}}>
-			<h2 className='banner-label' >{bannerLabel}</h2>
+		<div style={{width:'25%'}}>
+			<p className='banner-label' style={{fontSize:'10pt', color: 'white'}}>{bannerLabel}</p>
 		</div>
-		<div style={{width:'83%', textAlign: 'center'}}>
+		<div style={{width:'75%', textAlign: 'center', height: '90px'}}>
 			<a href={bannersInfo.url}>
-				<img src={bannersInfo.image} height='90px' alt="banner"/>
+				<img src={bannersInfo.image} height='100%' width='100%' alt="banner"/>
 			</a>
 		</div>
 	</div>
