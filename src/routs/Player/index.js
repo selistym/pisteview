@@ -10,41 +10,7 @@ import {Link} from 'react-router-dom';
 import './styles.css';
 import AdsBadge from '../../components/AdsBadge';
 
-const tempLink = [{
-  belongs_to_video: 202,
-  icon_size: "near-field",
-  id: 541,
-  label: "36",
-  links_to_video: 122,
-  locked: false,
-  short_label: "36",
-  show: false,
-  svg_image_x: 32,
-  svg_image_y: 45,
-  svg_text_x: 63,
-  svg_text_y: 96,
-  svg_transformation: "rotate(135 67.66111755371095,76.1715087890625)",
-  timeframe_link_entry_point: 13,
-  timeframe_link_exit_point: 121,
-  timeframe_video_entry_point: 0,
-  video_info:{
-    id: 122,
-    internal_name: "Red 36",
-    video_type: {
-      category: {
-        id: 3,
-        name: "Pistes"
-      },
-      color_class: "icon-piste-9",
-      icon: "piste",
-      icon_color: "#e42222",
-      id: 9,
-      image_icon: false
-    },
-  },  
-  x_position_on_video_v5: 32,
-  y_position_on_video_v5: 45
-}];
+
 const initialState = {
   playing: true,
   volume: 1,
@@ -292,9 +258,10 @@ class Player extends Component {
       hidden,
       directionObj,
     } = this.state;
+    
     const url = `https://www.youtube.com/watch?v=${this._getCurrentVideoId()}`;
     const isPlaying = !hidden && playing;
-    // console.log(this.props.currentVideo.links, 'links')
+    
     return (
       <div className="player">
         <PlayerInfoBar
@@ -303,7 +270,7 @@ class Player extends Component {
           length={info_length}
           label={label}
           name={name}
-          video_type={video_type}
+          video_type={video_type}          
         />
         <YouTubePlayer
           ref={this.ref}
@@ -386,13 +353,14 @@ class Player extends Component {
         </PlayerToolBar>
         
         <VideoMarkerList
-          links={tempLink}
+          links={this.props.currentVideo.links}
           played={played}
           duration={duration}
           switchToVideo={this.props.switchToVideo}
           dx={directionObj.yaw}
           dy={directionObj.pitch}
           cameraAngle={directionObj.fov}
+          is360Active={this.props.is360Active}
         />
         {banners && <AdsBadge bannersInfo={banners[0]} bannerLabel={bannerLabel}/>}
       </div>

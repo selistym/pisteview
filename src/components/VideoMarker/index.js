@@ -20,11 +20,17 @@ class VideoMarker extends PureComponent {
 	handleOnMouseLeave = (hex) => this.changeOpacity(hex, .5);
 	
 	render() {
-		const {link, played, duration, switchToVideo, dx, dy, cameraAngle} = this.props;		
+		const {link, played, duration, switchToVideo, dx, dy, cameraAngle, is360Active} = this.props;		
 		const {bgColor} = this.state;
-		
-		const _left = getRotatedMarkerCoordinate(60 * Math.PI/360, link.x_position_on_video_v5, dx*Math.PI/360);
-		const _bottom = getRotatedMarkerCoordinate(44 * Math.PI/360, link.y_position_on_video_v5, -dy*Math.PI/360);
+		let _left, _bottom;
+		if(is360Active==true)
+		{
+			_left = getRotatedMarkerCoordinate(60 * Math.PI/360, link.x_position_on_video_v5, dx * Math.PI/360);
+			_bottom = getRotatedMarkerCoordinate(44 * Math.PI/360, link.y_position_on_video_v5, -dy * Math.PI/360);
+		}else{
+			_left = getRotatedMarkerCoordinate(60 * Math.PI/360, link.x_position_on_video_v5, 1 * Math.PI/360);
+			_bottom = getRotatedMarkerCoordinate(44 * Math.PI/360, link.y_position_on_video_v5, 1 * Math.PI/360);
+		}
 		
 		const videoMark = {
 			position: 'absolute',
@@ -34,7 +40,9 @@ class VideoMarker extends PureComponent {
 		if (_left < 4 || _left > 97) {
 			videoMark.display = 'none';
 		}
-		
+		if (_bottom < 25 || _bottom > 97) {
+			videoMark.display = 'none';
+		}
 		const visibleCondition  = () => (
 			link.timeframe_link_entry_point <= (played * (duration - 1.2)))
 			&& (link.timeframe_link_exit_point > (played * (duration - 1.2))
