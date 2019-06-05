@@ -301,9 +301,10 @@ class Player extends Component {
           !video_id && <div className="player-placeholder"/>
         }
         <div className={`buttons-transparent-video-overlay`}/>
+        {console.log(banners.length, 'banner')}
         <div
           className={`suggested-video-overlay ${(!isPlaying || !playing) ? 'visible' : ''}`}
-          style={{ background: this.props.brandColor }}
+          style={{ background: this.props.brandColor, bottom: banners.length > 0 ? '144px' : '42px'}}
         >
           {this.state.links.map((item) => (
             <div key={item.id}>
@@ -362,7 +363,8 @@ class Player extends Component {
           cameraAngle={directionObj.fov}
           is360Active={this.props.is360Active}
         />
-        {banners && <AdsBadge bannersInfo={banners[0]} bannerLabel={bannerLabel}/>}
+        
+        {banners.length > 0 && <AdsBadge bannersInfo={banners[0]} bannerLabel={bannerLabel}/>}
       </div>
     );
   }

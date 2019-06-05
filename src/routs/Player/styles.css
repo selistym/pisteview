@@ -30,8 +30,7 @@
   display: flex;
   align-items: center;
   background-color: #3B3C41;
-  position: absolute;
-  bottom: 144px;
+  position: absolute;  
   left: 0;
   right: 0;
   height: 175px;

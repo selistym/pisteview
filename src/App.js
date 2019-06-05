@@ -66,8 +66,8 @@ const App = props => {
           });
         
         // set initial values to state
-        dispatch({type: 'change_bannerlabel', value: response.data.banner_label});
-        dispatch({type: 'change_banners', value: response.data.banners});
+        dispatch({type: 'change_bannerlabel', value: response.data.banner_label ? response.data.banner_label : ''});
+        dispatch({type: 'change_banners', value: response.data.banners ? response.data.banners : []});
         dispatch({type: 'change_brandcolor', value: response.data.brand_color || '#3B3C41'});
         dispatch({type: 'change_resortname', value: response.data.resort.name});
         dispatch({type: 'change_locations', value: locations});
