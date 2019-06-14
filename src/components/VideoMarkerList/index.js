@@ -17,7 +17,7 @@ const VideoMarkerList = ({links = [], played, duration, switchToVideo, dx, dy, c
           cameraAngle={cameraAngle}
           is360Active={is360Active}
         />
-      )
+      );
     })
   )
 };

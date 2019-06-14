@@ -98,7 +98,7 @@ class Player extends Component {
         const directionObj = this.player && this.player.getInternalPlayer && this.player.getInternalPlayer()
           && typeof(this.player.getInternalPlayer().getSphericalProperties) === 'function'
           && this.player.getInternalPlayer().getSphericalProperties()
-          || { yaw: 0, pitch: 0, fov: 100 };
+          || { yaw: 0, pitch: 0, fov: 100 };          
         this.setState({ directionObj });
       }, 20);
     } else if (prevProps.is360Active && !this.props.is360Active) {
@@ -301,7 +301,6 @@ class Player extends Component {
           !video_id && <div className="player-placeholder"/>
         }
         <div className={`buttons-transparent-video-overlay`}/>
-        {console.log(banners.length, 'banner')}
         <div
           className={`suggested-video-overlay ${(!isPlaying || !playing) ? 'visible' : ''}`}
           style={{ background: this.props.brandColor, bottom: banners.length > 0 ? '144px' : '42px'}}

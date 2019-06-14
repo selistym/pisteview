@@ -17,8 +17,8 @@ const AdsBadge = ({bannersInfo, bannerLabel}) => (
 
 
 AdsBadge.propTypes = {
-	bannersInfo: PropTypes.array.isRequired,
-	bannerLabel: PropTypes.string.isRequired	
+	bannersInfo: PropTypes.object.isRequired,
+	bannerLabel: PropTypes.string.isRequired
 };
 
 export default AdsBadge;
