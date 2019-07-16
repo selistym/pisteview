@@ -4,8 +4,8 @@ import VideoMarker from '../../components/VideoMarker'
 const VideoMarkerList = ({links = [], played, duration, switchToVideo, dx, dy, cameraAngle, is360Active}) => {
   
   return (
-    links.map((link) => {
-      return (        
+    links.map((link) => {      
+      return (
         <VideoMarker
           key={link.id}
           link={link}
@@ -17,7 +17,7 @@ const VideoMarkerList = ({links = [], played, duration, switchToVideo, dx, dy, c
           cameraAngle={cameraAngle}
           is360Active={is360Active}
         />
-      );
+      )
     })
   )
 };

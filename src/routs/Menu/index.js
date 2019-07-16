@@ -7,7 +7,7 @@ const Menu = (props) => {
 
   const { language, locations, switchToVideo, history, currentVideoId } = props;
   const sortedLocations = _.reverse(_.values(_.groupBy(locations, 'location_type.category.id')));
-  console.log('sortedLocations', sortedLocations);
+  
   return (
     <div className="menu__block">
       {

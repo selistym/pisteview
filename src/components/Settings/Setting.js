@@ -13,8 +13,7 @@ class Setting extends Component {
   };
 
   render() {
-    const { label, currentValue, options } = this.props;
-    console.log(`render ${this.constructor.name}`);
+    const { label, currentValue, options } = this.props;    
 
     return (
       <li className="popup-menu__item">

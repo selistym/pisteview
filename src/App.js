@@ -50,7 +50,7 @@ const App = props => {
     // get all data from api
     axios.get(`https://api.pisteview.com/v1/players/${playerId}/`)
       .then((response) => {
-        console.log('response data ', response.data);
+        console.log(response.data)
         const locations = response.data.resort.locations
           .filter(location => !!location.video)
           .map(location => {

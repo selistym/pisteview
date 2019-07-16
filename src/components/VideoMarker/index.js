@@ -21,9 +21,11 @@ class VideoMarker extends PureComponent {
 	
 	render() {
 		const {link, played, duration, switchToVideo, dx, dy, cameraAngle, is360Active} = this.props;		
+		
 		const {bgColor} = this.state;
 		let _left, _bottom;
-		if(is360Active==true)
+		
+		if(is360Active === true)
 		{
 			_left = getRotatedMarkerCoordinate(60 * Math.PI/360, link.x_position_on_video_v5, dx * Math.PI/360);
 			_bottom = getRotatedMarkerCoordinate(44 * Math.PI/360, link.y_position_on_video_v5, -dy * Math.PI/360);
@@ -42,11 +44,21 @@ class VideoMarker extends PureComponent {
 		}
 		if (_bottom < 25 || _bottom > 97) {
 			videoMark.display = 'none';
-		}
-		const visibleCondition  = () => (
-			link.timeframe_link_entry_point <= (played * (duration - 1.2)))
-			&& (link.timeframe_link_exit_point > (played * (duration - 1.2))
-		);
+		}		
+	
+		const visibleCondition  = () => {
+			console.log(link, 'link')
+			if(link.timeframe_link_entry_point <= (played * (duration - 1.2)) && link.timeframe_link_exit_point > (played * (duration - 1.2))){
+				if(!is360Active && link.category === 'video'){					
+					console.log(is360Active, link.category, 'non 360')
+					return true;
+				}
+				if(is360Active && link.category !== 'video'){
+					console.log(is360Active, link.category, 'is 360')
+					return true;
+				}
+			}
+		};
 		
 		return (
 			<div
@@ -60,33 +72,11 @@ class VideoMarker extends PureComponent {
 				onMouseLeave={() => this.handleOnMouseLeave(link.video_info.video_type.icon_color)}
 			>				
 				<svg
-					width={link.icon_size === "near-field" ? "400" : "400"}
-					height={link.icon_size === "near-field" ? "200" : "200"}
+					width={link.icon_size === "near-field" ? "150" : "100"}
+					height={link.icon_size === "near-field" ? "150" : "100"}
 					xmlns="http://www.w3.org/2000/svg"
 				>
 					<g>
-						<g id="svg_rect">
-							<rect 
-								rx="10" 
-								ry="10"
-								x="5"
-								y="35"
-								width="320"
-								height="130"
-								fill="rgba(111, 150, 230, 0.8)" />
-							<text									
-								fill="#fff"
-								strokeWidth="0"
-								strokeLinejoin="null"
-								strokeLinecap="null"
-								fontSize={link.icon_size === "near-field" ? "20" : "16"}
-								textAnchor="start"
-								x={320 / 8}
-								y={130  * 7 / 8}
-							>
-								HEIGLE
-							</text>
-						</g>
 						<g id="svg_8" transform={link.svg_transformation}>
 							<g id="svg_6">
 								<circle

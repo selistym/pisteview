@@ -4,17 +4,20 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "eslint": "5.6.0",
     "google-map-react": "^1.0.9",
     "hex-rgb": "^3.0.0",
+    "json-loader": "^0.5.7",
     "lodash": "^4.17.11",
     "prop-types": "^15.6.2",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-player": "^1.6.6",
     "react-popper": "^1.0.0-beta.6",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.5",
-    "react-switch": "^3.0.4"
+    "react-switch": "^3.0.4",
+    "standard": "^13.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
