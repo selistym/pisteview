@@ -8,7 +8,7 @@
     "google-map-react": "^1.0.9",
     "hex-rgb": "^3.0.0",
     "json-loader": "^0.5.7",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "prop-types": "^15.6.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
